@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity_2fa">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:outlineSpotShadowColor="@color/black"
+        android:background="#00FFFF"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="120dp">
+        <TextView
+            android:fontFamily="sans-serif"
+            android:textSize="25dp"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:text="Thông tin tài khoản"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="25dp"
+        android:layout_marginTop="15dp"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:text="UserName:"/>
+
+        <TextView
+            android:id="@+id/show_username"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="left|center"
+            android:textSize="25dp"
+            android:hint="Username"
+            android:imeOptions="actionDone"
+            android:selectAllOnFocus="true"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:padding="25dp"
+        android:gravity="center"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="Enable 2-FA"
+            tools:ignore="HardcodedText,SpUsage" />
+        <Switch
+            android:id="@+id/switch_btn_2FA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_weight="1"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+    </LinearLayout>
+
+<!--Phần hiện Key và verify code và btn xác minh-->
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/Form2FA"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"
+        tools:ignore="UselessLeaf">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:layout_marginTop="15dp"
+            tools:ignore="MissingConstraints,UselessParent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:text="Secret Key"
+                tools:ignore="HardcodedText,SpUsage" />
+
+            <EditText
+                android:id="@+id/edt_SecretKey"
+                android:textSize="18dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:selectAllOnFocus="true"
+                tools:ignore="SpUsage" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            tools:ignore="MissingConstraints">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:padding="10dp"
+                android:text="Mã xác thực"
+                tools:ignore="HardcodedText,SpUsage" />
+
+            <EditText
+                android:id="@+id/edt_code_enable2FA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập mã xác thực"
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:imeOptions="actionDone"
+                android:selectAllOnFocus="true"
+                tools:ignore="HardcodedText,SpUsage" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="15dp"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/btn_verify"
+                android:layout_width="120dp"
+                android:layout_height="55dp"
+                android:text="Xác nhận"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
